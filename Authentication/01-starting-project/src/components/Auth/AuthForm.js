@@ -45,6 +45,7 @@ const AuthForm = () => {
       },
     })
       .then((res) => {
+        console.log(res);
         setIsLoading(false);
         if (res.ok) {
           return res.json();
@@ -52,9 +53,9 @@ const AuthForm = () => {
           return res.json().then((data) => {
             console.log(data);
             let errorMessage = "Authentication failed!";
-            // if (data && data.error && data.error.message) {
-            //   errorMessage = data.error.message;
-            // }
+            if (data && data.error && data.error.message) {
+              errorMessage = data.error.message;
+            }
 
             throw new Error(errorMessage);
           });
@@ -62,6 +63,7 @@ const AuthForm = () => {
       })
       .then((data) => {
         authCtx.login(data.idToken);
+        console.log(data);
       })
       .catch((err) => {
         alert(err.message);
