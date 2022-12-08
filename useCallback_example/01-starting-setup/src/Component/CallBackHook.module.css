@@ -1,0 +1,17 @@
+.CallBackHook{
+    display: flex;
+    background-color: red;
+    flex-direction: column;
+    width: 400px;
+    margin:auto;
+    align-items: center;
+
+}
+
+.countButton{
+    background-color: aqua;
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
